@@ -1,7 +1,8 @@
 # Sanoosha Premium — E-Commerce Platform Design Spec
 **Date:** 2026-04-15  
 **Project:** `/Users/rohit/Projects/websites/sanoosha-premium`  
-**Brand:** Sanoosha — Authentic Rudraksha & Crystal Jewellery
+**Brand:** Sanoosha — Authentic Rudraksha & Crystal Jewellery  
+**Brand Guide:** [`docs/brand-guide.md`](../../brand-guide.md) — colors, typography, real images, full product catalog
 
 ---
 
