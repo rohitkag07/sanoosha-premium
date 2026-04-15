@@ -7,7 +7,9 @@ export async function proxy(request: NextRequest) {
 
   if (pathname.startsWith('/admin')) {
     if (!user) {
-      return NextResponse.redirect(new URL('/login', request.url))
+      const loginUrl = new URL('/login', request.url)
+      loginUrl.searchParams.set('redirect', pathname)
+      return NextResponse.redirect(loginUrl)
     }
 
     const { data: profile } = await supabase
