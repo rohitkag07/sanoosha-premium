@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { createClient } from '@/lib/supabase/server'
 import StatsCard from '@/components/admin/StatsCard'
 import { formatPrice } from '@/lib/utils'

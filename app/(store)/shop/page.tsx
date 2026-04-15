@@ -1,18 +1,21 @@
+export const dynamic = 'force-dynamic'
+
 import Link from 'next/link'
 import ProductCard from '@/components/store/ProductCard'
 import { createClient } from '@/lib/supabase/server'
 import type { Product } from '@/types'
 
 interface ShopPageProps {
-  searchParams: { category?: string }
+  searchParams: Promise<{ category?: string }>
 }
 
 export default async function ShopPage({ searchParams }: ShopPageProps) {
+  const params = await searchParams
   const supabase = await createClient()
   let query = supabase.from('products').select('*').order('created_at', { ascending: false })
 
-  if (searchParams.category) {
-    query = query.eq('category', searchParams.category)
+  if (params.category) {
+    query = query.eq('category', params.category)
   }
 
   const { data: products, error } = await query

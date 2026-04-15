@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { notFound } from 'next/navigation'
 import AddToCartButton from './AddToCartButton'
 import { createClient } from '@/lib/supabase/server'
@@ -5,15 +7,16 @@ import { formatPrice, discountPercent } from '@/lib/utils'
 import type { Product } from '@/types'
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export default async function ProductPage({ params }: PageProps) {
+  const { slug } = await params
   const supabase = await createClient()
   const { data: product, error } = await supabase
     .from('products')
     .select('*, product_variants(*)')
-    .eq('slug', params.slug)
+    .eq('slug', slug)
     .maybeSingle()
 
   if (error || !product) {

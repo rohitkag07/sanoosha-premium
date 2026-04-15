@@ -1,12 +1,15 @@
+export const dynamic = 'force-dynamic'
+
 import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { formatPrice } from '@/lib/utils'
 
 interface PageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export default async function OrderDetailPage({ params }: PageProps) {
+  const { id } = await params
   const supabase = await createClient()
   const {
     data: { user },
@@ -20,7 +23,7 @@ export default async function OrderDetailPage({ params }: PageProps) {
   const { data: order, error } = await supabase
     .from('orders')
     .select('order_number, status, total_amount, created_at, shipping_address, order_items(product_id(*), variant_id(*), quantity, price_at_purchase)')
-    .eq('order_number', params.id)
+    .eq('order_number', id)
     .eq('user_id', user.id)
     .maybeSingle()
 
@@ -50,7 +53,7 @@ export default async function OrderDetailPage({ params }: PageProps) {
 
             <div className="mt-8 space-y-4">
               {(order.order_items as any[] | undefined)?.map((item, index) => (
-                <div key={`${params.id}-${index}`} className="rounded-[24px] border border-gray-100 bg-white p-6">
+                <div key={`${id}-${index}`} className="rounded-[24px] border border-gray-100 bg-white p-6">
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <h2 className="text-lg font-semibold text-charcoal">
