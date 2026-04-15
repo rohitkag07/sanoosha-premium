@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanoosha – Authentic Rudraksha & Crystal Jewellery</title>
+  <meta name="description" content="Sanoosha offers 100% authentic, certified Nepal-origin Rudraksha beads and energy-cleansed crystal bracelets. Bring divine energy and positivity into your life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ━━━━ RESET & VARIABLES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --terra:   #8B3A2A;
+      --gold:    #C8A84B;
+      --gold-lt: #E8D090;
+      --ivory:   #F9F5EE;
+      --cream:   #FAF7F2;
+      --charcoal:#1A1A1A;
+      --gray:    #6B6B6B;
+      --gray-lt: #E8E2D9;
+      --white:   #FFFFFF;
+      --shadow:  0 8px 40px rgba(26,26,26,.10);
+      --shadow-lg: 0 20px 60px rgba(26,26,26,.15);
+      --radius:  12px;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ━━━━ UTILITY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .container { width: 90%; max-width: 1240px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--charcoal);
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-top: .75rem;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      background: var(--terra);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+    .btn-primary:hover { background: #6e2d1f; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(139,58,42,.35); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      border: 1.5px solid var(--terra);
+      color: var(--terra);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .875rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+    .btn-outline:hover { background: var(--terra); color: #fff; }
+
+    /* ━━━━ ANNOUNCEMENT BAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .announcement {
+      background: var(--terra);
+      color: #fff;
+      text-align: center;
+      padding: .55rem 1rem;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      font-weight: 500;
+    }
+    .announcement span { color: var(--gold-lt); font-weight: 600; }
+
+    /* ━━━━ HEADER / NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-lt);
+      transition: var(--transition);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--charcoal);
+      position: relative;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--terra);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--terra); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .nav-actions a, .nav-actions button {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      transition: color var(--transition);
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+    }
+    .nav-actions a:hover, .nav-actions button:hover { color: var(--terra); }
+    .nav-cart-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px; height: 18px;
+      background: var(--terra);
+      color: #fff;
+      border-radius: 50%;
+      font-size: .65rem;
+      font-weight: 700;
+    }
+    .nav-cta {
+      padding: .5rem 1.25rem;
+      background: var(--terra);
+      color: #fff !important;
+      border-radius: 4px;
+      font-size: .8rem !important;
+      font-weight: 600 !important;
+      letter-spacing: .06em;
+    }
+    .nav-cta:hover { background: #6e2d1f; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: var(--transition); border-radius: 2px; }
+
+    /* ━━━━ HERO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      background: var(--ivory);
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 0;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow-line { width: 40px; height: 1.5px; background: var(--gold); }
+    .hero-eyebrow span { font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--terra); }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-lt);
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--terra);
+      line-height: 1;
+    }
+    .hero-stat-label { font-size: .8rem; color: var(--gray); margin-top: .25rem; font-weight: 500; }
+    .hero-visual {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+      padding: 2rem 0 2rem 2rem;
+    }
+    .hero-img-main {
+      grid-column: 1;
+      grid-row: 1 / 3;
+      border-radius: 16px 0 0 16px;
+      overflow: hidden;
+    }
+    .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-img-sm {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .hero-img-sm img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-badge {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border-radius: 50px;
+      padding: .6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+      z-index: 3;
+    }
+    .hero-badge-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+    .hero-badge span { font-size: .8rem; font-weight: 600; color: var(--charcoal); }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+
+    /* ━━━━ TRUST BAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .trust-bar {
+      background: var(--charcoal);
+      padding: 1.1rem 0;
+    }
+    .trust-bar-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .4rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-icon { font-size: 1.1rem; }
+    .trust-item span { font-size: .8rem; font-weight: 500; letter-spacing: .05em; color: rgba(255,255,255,.85); }
+    .trust-item b { color: var(--gold-lt); }
+
+    /* ━━━━ CATEGORIES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .categories { padding: 5rem 0; background: var(--white); }
+    .categories-header { text-align: center; margin-bottom: 3rem; }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .category-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      cursor: pointer;
+      group: true;
+    }
+    .category-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.4,0,.2,1);
+    }
+    .category-card:hover img { transform: scale(1.06); }
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,.75) 0%, rgba(26,26,26,.1) 55%, transparent 100%);
+      transition: var(--transition);
+    }
+    .category-card:hover .category-overlay { background: linear-gradient(to top, rgba(139,58,42,.8) 0%, rgba(26,26,26,.15) 55%, transparent 100%); }
+    .category-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem;
+    }
+    .category-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: .25rem;
+    }
+    .category-content p { font-size: .8rem; color: rgba(255,255,255,.75); letter-spacing: .05em; text-transform: uppercase; margin-bottom: .75rem; }
+    .category-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--gold-lt);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: gap var(--transition);
+    }
+    .category-card:hover .category-link { gap: .7rem; }
+
+    /* ━━━━ PRODUCTS SECTION ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .products-section { padding: 5rem 0; background: var(--cream); }
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+    .view-all-link {
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--terra);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      transition: gap var(--transition);
+    }
+    .view-all-link:hover { gap: .6rem; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .product-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: var(--ivory);
+    }
+    .product-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(.4,0,.2,1);
+    }
+    .product-card:hover .product-img-wrap img { transform: scale(1.07); }
+    .product-badge {
+      position: absolute;
+      top: .75rem; left: .75rem;
+      padding: .3rem .7rem;
+      border-radius: 20px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .badge-sale { background: var(--terra); color: #fff; }
+    .badge-certified { background: var(--gold); color: var(--charcoal); }
+    .product-wishlist {
+      position: absolute;
+      top: .75rem; right: .75rem;
+      width: 32px; height: 32px;
+      background: rgba(255,255,255,.9);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      transition: var(--transition);
+      opacity: 0;
+    }
+    .product-card:hover .product-wishlist { opacity: 1; }
+    .product-wishlist:hover { background: var(--terra); color: #fff; }
+    .product-info { padding: 1.25rem; }
+    .product-mukhi {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .35rem;
+    }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.3;
+      margin-bottom: .5rem;
+    }
+    .product-benefit {
+      font-size: .8rem;
+      color: var(--gray);
+      margin-bottom: .75rem;
+      line-height: 1.5;
+    }
+    .product-pricing {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 1rem;
+    }
+    .price-current {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+    .price-original {
+      font-size: .85rem;
+      color: var(--gray);
+      text-decoration: line-through;
+    }
+    .price-off {
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--terra);
+      background: rgba(139,58,42,.1);
+      padding: .15rem .4rem;
+      border-radius: 3px;
+    }
+    .product-add-btn {
+      width: 100%;
+      padding: .75rem;
+      background: var(--charcoal);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+    }
+    .product-add-btn:hover { background: var(--terra); }
+
+    /* ━━━━ BRAND STORY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .brand-story {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+    .brand-story-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .brand-story-visual {
+      position: relative;
+    }
+    .brand-story-img-main {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .brand-story-img-main img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-story-img-accent {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      width: 45%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 6px solid var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .brand-story-img-accent img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-cert-pill {
+      position: absolute;
+      top: 2rem; right: -1rem;
+      background: var(--white);
+      border-radius: 50px;
+      padding: .75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      box-shadow: var(--shadow);
+    }
+    .brand-cert-icon { font-size: 1.4rem; }
+    .brand-cert-text { font-size: .75rem; }
+    .brand-cert-text b { display: block; font-size: .85rem; color: var(--charcoal); }
+    .brand-story-content { }
+    .brand-story-content .section-sub { margin-bottom: 1.5rem; }
+    .brand-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .brand-feature {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+    .brand-feature-icon {
+      width: 40px; height: 40px;
+      background: rgba(139,58,42,.08);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .brand-feature-text h4 {
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: .2rem;
+    }
+    .brand-feature-text p { font-size: .8rem; color: var(--gray); line-height: 1.5; }
+
+    /* ━━━━ BRACELETS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .bracelets-section {
+      padding: 6rem 0;
+      background: var(--ivory);
+    }
+    .bracelets-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+    .bracelets-hero-img {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16/11;
+    }
+    .bracelets-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+    .bracelets-products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .bracelet-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .bracelet-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .bracelet-img {
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #f0ece5;
+    }
+    .bracelet-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .bracelet-card:hover .bracelet-img img { transform: scale(1.07); }
+    .bracelet-info { padding: 1rem; }
+    .bracelet-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: .25rem;
+    }
+    .bracelet-price {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--terra);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .bracelet-price s { color: var(--gray); font-weight: 400; font-size: .8rem; }
+    .bracelet-btn {
+      width: 100%;
+      margin-top: .75rem;
+      padding: .6rem;
+      background: transparent;
+      border: 1.5px solid var(--gray-lt);
+      color: var(--charcoal);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+    .bracelet-btn:hover { border-color: var(--terra); background: var(--terra); color: #fff; }
+
+    /* ━━━━ HOW IT WORKS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .how-it-works {
+      padding: 5rem 0;
+      background: var(--charcoal);
+    }
+    .how-it-works .section-title { color: #fff; }
+    .how-it-works .section-tag { color: var(--gold-lt); }
+    .how-header { text-align: center; margin-bottom: 3.5rem; }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .how-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    .how-card:hover { background: rgba(255,255,255,.09); transform: translateY(-4px); }
+    .how-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(200,168,75,.25);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .how-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .how-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: .75rem;
+    }
+    .how-card p { font-size: .875rem; color: rgba(255,255,255,.6); line-height: 1.7; }
+
+    /* ━━━━ TESTIMONIALS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .testimonials {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    .testimonials-header { text-align: center; margin-bottom: 3rem; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      background: var(--cream);
+      border: 1px solid var(--gray-lt);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    .testimonial-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: .1rem; }
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--gold-lt);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--terra);
+      font-family: 'Cormorant Garamond', serif;
+      overflow: hidden;
+    }
+    .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .author-name { font-size: .875rem; font-weight: 600; color: var(--charcoal); }
+    .author-label { font-size: .75rem; color: var(--gray); }
+
+    /* ━━━━ CONTACT STRIP ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .contact-strip {
+      background: var(--ivory);
+      padding: 4rem 0;
+    }
+    .contact-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .contact-item { padding: 1.5rem; }
+    .contact-item-icon { font-size: 2rem; margin-bottom: .75rem; }
+    .contact-item h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: .35rem;
+    }
+    .contact-item a, .contact-item p {
+      font-size: .875rem;
+      color: var(--terra);
+      font-weight: 500;
+    }
+
+    /* ━━━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,.7);
+      padding: 4rem 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand img { height: 36px; margin-bottom: 1rem; filter: brightness(10); }
+    .footer-brand p { font-size: .875rem; line-height: 1.7; max-width: 280px; margin-bottom: 1.5rem; }
+    .footer-social { display: flex; gap: .75rem; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,.08);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem;
+      transition: var(--transition);
+      color: rgba(255,255,255,.7);
+    }
+    .footer-social a:hover { background: var(--terra); color: #fff; }
+    .footer-col h5 {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: .65rem; }
+    .footer-col a { font-size: .875rem; transition: color var(--transition); }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      font-size: .8rem;
+      color: rgba(255,255,255,.4);
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    /* ━━━━ MOBILE MENU ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 9999;
+      flex-direction: column;
+      padding: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .mobile-menu ul { list-style: none; }
+    .mobile-menu li { border-bottom: 1px solid var(--gray-lt); }
+    .mobile-menu a {
+      display: block;
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+    .mobile-close {
+      font-size: 1.5rem;
+      color: var(--charcoal);
+      cursor: pointer;
+    }
+
+    /* ━━━━ SCROLL REVEAL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ━━━━ RESPONSIVE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    @media (max-width: 1024px) {
+      .products-grid, .bracelets-products { grid-template-columns: repeat(3, 1fr); }
+      .hero-visual { grid-template-columns: 1fr; }
+      .hero-img-sm:last-child { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-visual { display: none; }
+      .hero-content { padding: 4rem 0 3rem; text-align: center; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-desc { margin: 0 auto 2rem; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+      .category-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .category-card { aspect-ratio: 16/9; }
+      .products-grid, .bracelets-products { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .products-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .brand-story-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .brand-story-img-accent { right: 0; }
+      .bracelets-hero { grid-template-columns: 1fr; gap: 2rem; }
+      .how-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-strip-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 480px) {
+      .products-grid, .bracelets-products { grid-template-columns: 1fr; }
+      .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); width: 100%; justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement">
+    🌿 Free Shipping on orders above <span>₹999</span> &nbsp;|&nbsp; All Rudraksha are <span>100% Authenticated & Certified</span> &nbsp;|&nbsp; Energised before dispatch
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="container">
+      <a href="#" class="nav-logo">
+        <img src="https://sanoosha.com/wp-content/uploads/2024/04/Sanoo-Photoroom.png" alt="Sanoosha" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#rudraksha">Rudraksha</a></li>
+        <li><a href="#bracelets">Bracelets</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:9232154621">📞 9232154621</a>
+        <a href="https://sanoosha.com" target="_blank" class="nav-cta">Shop Now</a>
+        <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <img src="https://sanoosha.com/wp-content/uploads/2024/04/Sanoo-Photoroom.png" alt="Sanoosha" height="36" />
+      <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">✕</button>
+    </div>
+    <ul>
+      <li><a href="#rudraksha" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Rudraksha</a></li>
+      <li><a href="#bracelets" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Bracelets</a></li>
+      <li><a href="#story" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Our Story</a></li>
+      <li><a href="#testimonials" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Reviews</a></li>
+      <li><a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding:3rem 0;">
+      <div class="hero-content reveal">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span>Nepal Origin · 100% Certified</span>
+        </div>
+        <h1>Divine Energy,<br /><em>Crafted for You</em></h1>
+        <p class="hero-desc">Authentic Rudraksha beads and energy-cleansed crystal bracelets — sourced from Nepal, certified by experts, delivered to your door.</p>
+        <div class="hero-actions">
+          <a href="#rudraksha" class="btn-primary">Explore Rudraksha →</a>
+          <a href="#bracelets" class="btn-outline">Shop Bracelets</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Happy Customers</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Certified Authentic</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">14</div>
+            <div class="hero-stat-label">Mukhi Varieties</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-img-main">
+          <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_4_aa2b33b1-261c-4143-aa6e-e44c4d0159cd-600x600.webp" alt="Rudraksha Mala" loading="eager" />
+        </div>
+        <div class="hero-img-sm" style="position:absolute;bottom:1.5rem;right:0;width:45%;border-radius:12px;overflow:hidden;border:4px solid #fff;box-shadow:0 20px 60px rgba(26,26,26,.18);">
+          <img src="https://sanoosha.com/wp-content/uploads/2026/03/DEF4C7C7-E0F3-4EA6-8656-F2009E742EA4-600x600.png" alt="Crystal Bracelet" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">✅</span><span><b>GIA Certified</b> Authentic Beads</span></div>
+      <div class="trust-item"><span class="trust-icon">🌿</span><span><b>Nepal Origin</b> Hand-Picked</span></div>
+      <div class="trust-item"><span class="trust-icon">🚚</span><span><b>Free Shipping</b> on ₹999+</span></div>
+      <div class="trust-item"><span class="trust-icon">↩️</span><span><b>7-Day</b> Easy Returns</span></div>
+      <div class="trust-item"><span class="trust-icon">⚡</span><span><b>Energised</b> Before Dispatch</span></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="container">
+      <div class="categories-header reveal">
+        <div class="section-tag">Collections</div>
+        <h2 class="section-title">Find Your Sacred Connection</h2>
+        <p class="section-sub" style="margin:0 auto;">Each piece is carefully sourced, certified, and energised to bring divine healing into your daily life.</p>
+      </div>
+      <div class="category-grid">
+        <a href="#rudraksha" class="category-card reveal">
+          <img src="https://sanoosha.com/wp-content/uploads/2026/03/7MukhiBead-600x600.webp" alt="Rudraksha Beads" loading="lazy" />
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <p>Nepal Origin</p>
+            <h3>Rudraksha Beads</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+        <a href="#bracelets" class="category-card reveal" style="transition-delay:.1s">
+          <img src="https://sanoosha.com/wp-content/uploads/2025/11/11-600x600.jpg" alt="Stone Bracelets" loading="lazy" />
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <p>Crystal Healing</p>
+            <h3>Stone Bracelets</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+        <a href="https://sanoosha.com" target="_blank" class="category-card reveal" style="transition-delay:.2s">
+          <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_26_f2dcd5ce-8865-4601-a04b-6be99e40c69b-600x600.webp" alt="Rudraksha Mala" loading="lazy" />
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <p>Sacred Malas</p>
+            <h3>Rudraksha Mala</h3>
+            <span class="category-link">Shop Now →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUDRAKSHA PRODUCTS -->
+  <section class="products-section" id="rudraksha">
+    <div class="container">
+      <div class="products-header reveal">
+        <div>
+          <div class="section-tag">Featured Collection</div>
+          <h2 class="section-title">Rudraksha Beads</h2>
+          <p class="section-sub">Each mukhi unlocks a unique divine power. Find the one that resonates with your journey.</p>
+        </div>
+        <a href="https://sanoosha.com/product-category/rudraksha/" target="_blank" class="view-all-link">View All →</a>
+      </div>
+      <div class="products-grid">
+
+        <!-- 1 Mukhi -->
+        <div class="product-card reveal">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">30% OFF</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/Gemini_Generated_Image_w7sdvuw7sdvuw7sd-600x600.png" alt="1 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">1 Mukhi · Rarest</div>
+            <div class="product-name">Nepal Origin 1 Mukhi Rudraksha</div>
+            <div class="product-benefit">Supreme consciousness · Liberation · Divine Power</div>
+            <div class="product-pricing">
+              <span class="price-current">₹21,000</span>
+              <span class="price-original">₹30,000</span>
+              <span class="price-off">30% OFF</span>
+            </div>
+            <a href="https://sanoosha.com/product/nepal-origin-1-mukhi-rudraksha-17mm-to-22mm-under-developed/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+        <!-- 2 Mukhi -->
+        <div class="product-card reveal" style="transition-delay:.05s">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">33% OFF</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_26_f2dcd5ce-8865-4601-a04b-6be99e40c69b-600x600.webp" alt="2 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">2 Mukhi · Unity</div>
+            <div class="product-name">Nepal Origin 2 Mukhi Rudraksha</div>
+            <div class="product-benefit">Harmony · Relationships · Emotional balance</div>
+            <div class="product-pricing">
+              <span class="price-current">₹16,000</span>
+              <span class="price-original">₹24,000</span>
+              <span class="price-off">33% OFF</span>
+            </div>
+            <a href="https://sanoosha.com/product/nepal-origin-2-mukhi-rudraksha-17mm-to-22mm/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+        <!-- 3 Mukhi -->
+        <div class="product-card reveal" style="transition-delay:.1s">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">53% OFF</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_4_aa2b33b1-261c-4143-aa6e-e44c4d0159cd-600x600.webp" alt="3 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">3 Mukhi · Fire</div>
+            <div class="product-name">Nepal Origin 3 Mukhi Rudraksha</div>
+            <div class="product-benefit">Confidence · Self-Power · Agni energy</div>
+            <div class="product-pricing">
+              <span class="price-current">₹6,999</span>
+              <span class="price-original">₹14,999</span>
+              <span class="price-off">53% OFF</span>
+            </div>
+            <a href="https://sanoosha.com/product/nepal-origin-3-mukhi-rudraksha-17mm-to-22mm/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+        <!-- 4 Mukhi -->
+        <div class="product-card reveal" style="transition-delay:.15s">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">45% OFF</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_5_c47c2ab4-a22e-40e6-8e7a-580a0b740b37-600x600.webp" alt="4 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">4 Mukhi · Brahma</div>
+            <div class="product-name">Nepal Origin 4 Mukhi Rudraksha</div>
+            <div class="product-benefit">Knowledge · Wisdom · Creative intelligence</div>
+            <div class="product-pricing">
+              <span class="price-current">₹4,799</span>
+              <span class="price-original">₹8,799</span>
+              <span class="price-off">45% OFF</span>
+            </div>
+            <a href="https://sanoosha.com/product/nepal-origin-4-mukhi-rudraksha-17mm-to-22mm/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+        <!-- 5 Mukhi -->
+        <div class="product-card reveal" style="transition-delay:.2s">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">50% OFF</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_6-600x600.webp" alt="5 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">5 Mukhi · Shiva</div>
+            <div class="product-name">Nepal Origin 5 Mukhi Rudraksha</div>
+            <div class="product-benefit">Health · Peace · Spiritual awakening</div>
+            <div class="product-pricing">
+              <span class="price-current">₹2,199</span>
+              <span class="price-original">₹4,399</span>
+              <span class="price-off">50% OFF</span>
+            </div>
+            <a href="https://sanoosha.com/product/nepal-origin-5-mukhi-rudraksha-17mm-to-22mm/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+        <!-- 6 Mukhi -->
+        <div class="product-card reveal" style="transition-delay:.25s">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-sale">33% OFF</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_7-600x600.webp" alt="6 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">6 Mukhi · Kartikeya</div>
+            <div class="product-name">Nepal Origin 6 Mukhi Rudraksha</div>
+            <div class="product-benefit">Will power · Focus · Mental strength</div>
+            <div class="product-pricing">
+              <span class="price-current">₹5,999</span>
+              <span class="price-original">₹8,999</span>
+              <span class="price-off">33% OFF</span>
+            </div>
+            <a href="https://sanoosha.com/product/nepal-origin-6-mukhi-rudraksha-17mm-to-22mm/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+        <!-- 7 Mukhi -->
+        <div class="product-card reveal" style="transition-delay:.3s">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-certified">Certified</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/7MukhiBead-600x600.webp" alt="7 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">7 Mukhi · Mahalakshmi</div>
+            <div class="product-name">Nepal Origin 7 Mukhi Rudraksha</div>
+            <div class="product-benefit">Luck · Prosperity · Financial growth</div>
+            <div class="product-pricing">
+              <span class="price-current">View Price</span>
+            </div>
+            <a href="https://sanoosha.com/product-category/rudraksha/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+        <!-- 8 Mukhi -->
+        <div class="product-card reveal" style="transition-delay:.35s">
+          <div class="product-img-wrap">
+            <span class="product-badge badge-certified">Certified</span>
+            <button class="product-wishlist">♡</button>
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_9-600x600.webp" alt="8 Mukhi Rudraksha" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <div class="product-mukhi">8 Mukhi · Ganesha</div>
+            <div class="product-name">Nepal Origin 8 Mukhi Rudraksha</div>
+            <div class="product-benefit">Remove obstacles · Success · New beginnings</div>
+            <div class="product-pricing">
+              <span class="price-current">View Price</span>
+            </div>
+            <a href="https://sanoosha.com/product-category/rudraksha/" target="_blank" class="product-add-btn">Shop Now →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STORY -->
+  <section class="brand-story" id="story">
+    <div class="container">
+      <div class="brand-story-inner">
+        <div class="brand-story-visual reveal">
+          <div class="brand-story-img-main">
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-03-at-10.30.16-600x600.jpeg" alt="Sanoosha Brand Story" loading="lazy" />
+          </div>
+          <div class="brand-story-img-accent">
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/DEF4C7C7-E0F3-4EA6-8656-F2009E742EA4-600x600.png" alt="Crystal Bracelet" loading="lazy" />
+          </div>
+          <div class="brand-cert-pill">
+            <span class="brand-cert-icon">🏅</span>
+            <div class="brand-cert-text">
+              <b>100% Certified</b>
+              Nepal Authentic
+            </div>
+          </div>
+        </div>
+        <div class="brand-story-content reveal">
+          <div class="section-tag">Our Story</div>
+          <h2 class="section-title">A Crystal-Inspired Journey of Healing</h2>
+          <p class="section-sub">Sanoosha is a sacred brand founded by <strong>Indresh Sharma</strong> — built on the belief that authentic, energy-cleansed crystals and Rudraksha can heal, uplift, and empower your spiritual journey.</p>
+          <p class="section-sub" style="margin-top:.75rem;">Every bead is hand-picked from Nepal, verified by certified experts, and ritually energised before reaching you.</p>
+          <div class="brand-features">
+            <div class="brand-feature">
+              <div class="brand-feature-icon">🌿</div>
+              <div class="brand-feature-text">
+                <h4>Nepal Origin</h4>
+                <p>Sourced directly from the Himalayan forests of Nepal</p>
+              </div>
+            </div>
+            <div class="brand-feature">
+              <div class="brand-feature-icon">🏅</div>
+              <div class="brand-feature-text">
+                <h4>Lab Certified</h4>
+                <p>Every bead verified for authenticity & mukhi count</p>
+              </div>
+            </div>
+            <div class="brand-feature">
+              <div class="brand-feature-icon">⚡</div>
+              <div class="brand-feature-text">
+                <h4>Pre-Energised</h4>
+                <p>Ritually cleansed and energised before dispatch</p>
+              </div>
+            </div>
+            <div class="brand-feature">
+              <div class="brand-feature-icon">📦</div>
+              <div class="brand-feature-text">
+                <h4>Premium Packaging</h4>
+                <p>Gift-ready packaging with care instructions</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://sanoosha.com" target="_blank" class="btn-primary">Visit Full Store →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRACELETS -->
+  <section class="bracelets-section" id="bracelets">
+    <div class="container">
+      <div class="bracelets-hero">
+        <div class="bracelets-hero-img reveal">
+          <img src="https://sanoosha.com/wp-content/uploads/2025/11/11-600x600.jpg" alt="Stone Bracelets Collection" loading="lazy" />
+        </div>
+        <div class="reveal">
+          <div class="section-tag">Crystal Healing</div>
+          <h2 class="section-title">Stone Bracelets —<br /><em style="font-style:italic;color:var(--terra)">Wear Your Positive Energy</em></h2>
+          <p class="section-sub">Natural healing crystals crafted into stylish bracelets. Protection · Positivity · Confidence — every single day.</p>
+          <br />
+          <a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank" class="btn-primary">View All Bracelets →</a>
+        </div>
+      </div>
+      <div class="bracelets-products">
+
+        <div class="bracelet-card reveal">
+          <div class="bracelet-img">
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/DEF4C7C7-E0F3-4EA6-8656-F2009E742EA4-600x600.png" alt="Rudraksha Bracelet" loading="lazy" />
+          </div>
+          <div class="bracelet-info">
+            <h4>Rudraksha Charm Bracelet</h4>
+            <div class="bracelet-price">₹1,499 <s>₹2,099</s></div>
+            <a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank"><button class="bracelet-btn">Shop Now</button></a>
+          </div>
+        </div>
+
+        <div class="bracelet-card reveal" style="transition-delay:.08s">
+          <div class="bracelet-img">
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-03-at-10.30.16-600x600.jpeg" alt="Black Obsidian Bracelet" loading="lazy" />
+          </div>
+          <div class="bracelet-info">
+            <h4>Black Obsidian Bracelet</h4>
+            <div class="bracelet-price">₹899 <s>₹1,299</s></div>
+            <a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank"><button class="bracelet-btn">Shop Now</button></a>
+          </div>
+        </div>
+
+        <div class="bracelet-card reveal" style="transition-delay:.16s">
+          <div class="bracelet-img">
+            <img src="https://sanoosha.com/wp-content/uploads/2025/11/11-600x600.jpg" alt="Clear Quartz Bracelet" loading="lazy" />
+          </div>
+          <div class="bracelet-info">
+            <h4>Clear Quartz Crystal Bracelet</h4>
+            <div class="bracelet-price">₹649</div>
+            <a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank"><button class="bracelet-btn">Shop Now</button></a>
+          </div>
+        </div>
+
+        <div class="bracelet-card reveal" style="transition-delay:.24s">
+          <div class="bracelet-img">
+            <img src="https://sanoosha.com/wp-content/uploads/2026/03/1_9-600x600.webp" alt="Seven Chakra Bracelet" loading="lazy" />
+          </div>
+          <div class="bracelet-info">
+            <h4>Seven Chakra Bracelet</h4>
+            <div class="bracelet-price">₹649</div>
+            <a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank"><button class="bracelet-btn">Shop Now</button></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="how-header reveal">
+        <div class="section-tag">Process</div>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-card reveal">
+          <div class="how-step-num">01</div>
+          <div class="how-icon">🔍</div>
+          <h3>Choose Your Bead</h3>
+          <p>Browse our certified collection and choose the Rudraksha or crystal that aligns with your spiritual goals and needs.</p>
+        </div>
+        <div class="how-card reveal" style="transition-delay:.1s">
+          <div class="how-step-num">02</div>
+          <div class="how-icon">⚡</div>
+          <h3>We Energise It</h3>
+          <p>Every piece is ritually cleansed and energised with Vedic mantras before dispatch — ready for immediate wear.</p>
+        </div>
+        <div class="how-card reveal" style="transition-delay:.2s">
+          <div class="how-step-num">03</div>
+          <div class="how-icon">✨</div>
+          <h3>Feel the Difference</h3>
+          <p>Wear your Rudraksha or crystal bracelet daily and experience the positive shift in energy, clarity, and wellbeing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header reveal">
+        <div class="section-tag">Customer Love</div>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"This men's bracelet exceeded my expectations. The craftsmanship is impressive, and the material feels premium and durable. It adds a bold yet classy touch to my everyday style."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div>
+              <div class="author-name">Ranveer</div>
+              <div class="author-label">Verified Buyer · Stone Bracelet</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="transition-delay:.1s">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Whether you're looking for a trendy unisex bracelet or a thoughtful gift, this piece is a fantastic choice. Absolutely love the quality and spiritual energy."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="https://sanoosha.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-03-at-10.30.16-600x600.jpeg" alt="Tanya" />
+            </div>
+            <div>
+              <div class="author-name">Tanya</div>
+              <div class="author-label">Verified Buyer · Crystal Bracelet</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" style="transition-delay:.2s">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"My 5 Mukhi Rudraksha arrived beautifully packaged with a certificate of authenticity. I can feel the positive energy every day. Highly recommend Sanoosha!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <div class="author-name">Ankit Sharma</div>
+              <div class="author-label">Verified Buyer · 5 Mukhi Rudraksha</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-strip" id="contact">
+    <div class="container">
+      <div class="contact-strip-inner">
+        <div class="contact-item reveal">
+          <div class="contact-item-icon">📧</div>
+          <h4>Email Us</h4>
+          <a href="mailto:sanooshatjewel@yahoo.com">sanooshatjewel@yahoo.com</a>
+        </div>
+        <div class="contact-item reveal" style="transition-delay:.1s">
+          <div class="contact-item-icon">📞</div>
+          <h4>Call / WhatsApp</h4>
+          <a href="tel:9232154621">9232154621</a>
+        </div>
+        <div class="contact-item reveal" style="transition-delay:.2s">
+          <div class="contact-item-icon">📍</div>
+          <h4>Visit Us</h4>
+          <p>B-65, Second Floor, Sector-56,<br />Noida – 201301</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://sanoosha.com/wp-content/uploads/2024/04/Sanoo-Photoroom.png" alt="Sanoosha" />
+          <p>Sanoosha is a crystal-inspired brand offering authentic and energy-cleansed crystals crafted to heal, uplift, and empower your spiritual journey.</p>
+          <div class="footer-social">
+            <a href="#" title="Instagram">📷</a>
+            <a href="https://wa.me/919232154621" title="WhatsApp">💬</a>
+            <a href="mailto:sanooshatjewel@yahoo.com" title="Email">✉️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Rudraksha</h5>
+          <ul>
+            <li><a href="https://sanoosha.com/product-category/rudraksha/" target="_blank">1 Mukhi</a></li>
+            <li><a href="https://sanoosha.com/product-category/rudraksha/" target="_blank">2 Mukhi</a></li>
+            <li><a href="https://sanoosha.com/product-category/rudraksha/" target="_blank">3 Mukhi</a></li>
+            <li><a href="https://sanoosha.com/product-category/rudraksha/" target="_blank">5 Mukhi</a></li>
+            <li><a href="https://sanoosha.com/product-category/rudraksha/" target="_blank">View All</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Bracelets</h5>
+          <ul>
+            <li><a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank">Obsidian</a></li>
+            <li><a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank">Clear Quartz</a></li>
+            <li><a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank">Rose Quartz</a></li>
+            <li><a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank">Seven Chakra</a></li>
+            <li><a href="https://sanoosha.com/product-category/all-bracelets/" target="_blank">View All</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="https://sanoosha.com/shipping-policy/" target="_blank">Shipping Policy</a></li>
+            <li><a href="https://sanoosha.com/refund_returns/" target="_blank">Return & Refunds</a></li>
+            <li><a href="https://sanoosha.com/privacy-policy/" target="_blank">Privacy Policy</a></li>
+            <li><a href="https://sanoosha.com/terms-and-conditions/" target="_blank">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Sanoosha. All Rights Reserved.</span>
+        <span>Made with ♥ for your spiritual journey</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header shadow on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      header.style.boxShadow = window.scrollY > 20 ? '0 4px 30px rgba(26,26,26,.10)' : 'none';
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>
