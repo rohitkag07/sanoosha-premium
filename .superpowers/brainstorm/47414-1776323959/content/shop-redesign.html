@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sacred Collection — Sanoosha Premium</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terra: #8B3A2A;
+      --terra-dark: #6e2e20;
+      --terra-light: #a8493a;
+      --gold: #C8A84B;
+      --gold-light: #e0c46a;
+      --gold-pale: #f5ead8;
+      --ivory: #F9F5EE;
+      --cream: #FAF7F2;
+      --charcoal: #1A1A1A;
+      --gray-brand: #6B6B6B;
+      --gray-light: #E8E2D9;
+      --white: #ffffff;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ===================== NAVBAR ===================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249, 245, 238, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+    }
+
+    .navbar-logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .navbar-logo-sub {
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .navbar-nav a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .navbar-nav a:hover { color: var(--terra); }
+    .navbar-nav a.active { color: var(--terra); border-bottom: 1.5px solid var(--terra); padding-bottom: 2px; }
+
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .navbar-icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--charcoal);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .navbar-icon-btn:hover { background: var(--gray-light); }
+
+    .cart-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: var(--terra);
+      color: white;
+      font-size: 0.55rem;
+      font-weight: 600;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+    }
+
+    /* ===================== HERO BANNER ===================== */
+    .shop-hero {
+      background: var(--charcoal);
+      position: relative;
+      padding: 5.5rem 2rem 4.5rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .shop-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(139,58,42,0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(200,168,75,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 100%, rgba(200,168,75,0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .shop-hero-pattern {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(200,168,75,0.08);
+    }
+
+    .hero-circle:nth-child(1) { width: 600px; height: 600px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .hero-circle:nth-child(2) { width: 800px; height: 800px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .hero-circle:nth-child(3) { width: 1000px; height: 1000px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+    .shop-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .shop-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .shop-hero-eyebrow::before, .shop-hero-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .shop-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 300;
+      color: var(--ivory);
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .shop-hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+
+    .shop-hero-desc {
+      font-size: 0.9rem;
+      color: rgba(249,245,238,0.6);
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      line-height: 1.75;
+    }
+
+    .shop-hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 1rem;
+    }
+
+    .shop-stat {
+      text-align: center;
+    }
+
+    .shop-stat-num {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      display: block;
+      line-height: 1;
+    }
+
+    .shop-stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(249,245,238,0.45);
+      margin-top: 4px;
+    }
+
+    /* ===================== FILTER & SORT BAR ===================== */
+    .filter-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 0;
+      position: sticky;
+      top: 68px;
+      z-index: 50;
+    }
+
+    .filter-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* Category pills */
+    .category-pills {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 0.85rem 0;
+    }
+
+    .category-pills::-webkit-scrollbar { display: none; }
+
+    .category-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--gray-brand);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      cursor: pointer;
+      white-space: nowrap;
+      background: transparent;
+      border: 1.5px solid transparent;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .category-pill:hover {
+      color: var(--charcoal);
+      border-color: var(--gray-light);
+      background: var(--white);
+    }
+
+    .category-pill.active {
+      background: var(--charcoal);
+      color: var(--ivory);
+      border-color: var(--charcoal);
+    }
+
+    .category-pill-count {
+      background: rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 0.1rem 0.45rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+    }
+
+    .category-pill.active .category-pill-count {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .category-pill:not(.active) .category-pill-count {
+      background: var(--gray-light);
+      color: var(--gray-brand);
+    }
+
+    .filter-right-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .sort-select {
+      appearance: none;
+      background: var(--white);
+      border: 1.5px solid var(--gray-light);
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      padding: 0.5rem 2rem 0.5rem 0.85rem;
+      cursor: pointer;
+      outline: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.65rem center;
+      transition: border-color 0.2s;
+    }
+
+    .sort-select:focus { border-color: var(--charcoal); }
+
+    .view-toggle {
+      display: flex;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .view-toggle-btn {
+      background: none;
+      border: none;
+      width: 36px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--gray-brand);
+      transition: all 0.15s;
+      font-size: 0.85rem;
+    }
+
+    .view-toggle-btn.active {
+      background: var(--charcoal);
+      color: var(--ivory);
+    }
+
+    .view-toggle-btn + .view-toggle-btn {
+      border-left: 1.5px solid var(--gray-light);
+    }
+
+    .results-count {
+      font-size: 0.78rem;
+      color: var(--gray-brand);
+      padding: 0.5rem 0;
+      white-space: nowrap;
+    }
+
+    /* ===================== MAIN SHOP LAYOUT ===================== */
+    .shop-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* SIDEBAR FILTERS */
+    .sidebar-filters {
+      position: sticky;
+      top: 128px;
+    }
+
+    .sidebar-filter-group {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .sidebar-filter-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .filter-group-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .filter-group-toggle {
+      font-size: 0.85rem;
+      color: var(--gray-brand);
+    }
+
+    .filter-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      font-size: 0.82rem;
+      color: var(--charcoal);
+    }
+
+    .filter-checkbox {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 2px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      background: white;
+    }
+
+    .filter-option.checked .filter-checkbox {
+      background: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    .filter-option.checked .filter-checkbox::after {
+      content: '✓';
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    .filter-option-label {
+      flex: 1;
+    }
+
+    .filter-option-count {
+      font-size: 0.7rem;
+      color: var(--gray-brand);
+    }
+
+    .price-range-track {
+      width: 100%;
+      height: 4px;
+      background: var(--gray-light);
+      border-radius: 2px;
+      margin: 0.75rem 0;
+      position: relative;
+    }
+
+    .price-range-fill {
+      position: absolute;
+      height: 100%;
+      background: var(--charcoal);
+      border-radius: 2px;
+      left: 10%;
+      right: 30%;
+    }
+
+    .price-range-handle {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: white;
+      border: 2px solid var(--charcoal);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .price-range-handle:first-child { left: 10%; margin-left: -7px; }
+    .price-range-handle:last-child { right: 30%; margin-right: -7px; }
+
+    .price-range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--gray-brand);
+    }
+
+    .color-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .color-swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.15s;
+      position: relative;
+    }
+
+    .color-swatch:hover, .color-swatch.active {
+      border-color: var(--charcoal);
+    }
+
+    .clear-filters-btn {
+      width: 100%;
+      background: none;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-brand);
+      padding: 0.65rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .clear-filters-btn:hover {
+      border-color: var(--charcoal);
+      color: var(--charcoal);
+    }
+
+    /* ===================== PRODUCT GRID ===================== */
+    .products-area {}
+
+    .products-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* Product Card */
+    .product-card {
+      background: var(--white);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--gray-light);
+      transition: all 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(26,26,26,0.1);
+      border-color: rgba(200,168,75,0.3);
+    }
+
+    /* "Hover state visible" demo card */
+    .product-card.hover-demo {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(26,26,26,0.1);
+      border-color: rgba(200,168,75,0.3);
+    }
+
+    .product-card.hover-demo .quick-add-bar { transform: translateY(0); }
+    .product-card.hover-demo .card-wishlist { opacity: 1; }
+
+    .product-card-img {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card-img.bg-1 { background: linear-gradient(145deg, #3d1a0a 0%, #8b3a2a 60%, #c05030 100%); }
+    .product-card-img.bg-2 { background: linear-gradient(145deg, #1a1040 0%, #3a2a80 60%, #6055c0 100%); }
+    .product-card-img.bg-3 { background: linear-gradient(145deg, #2a1005 0%, #7a4020 60%, #c07040 100%); }
+    .product-card-img.bg-4 { background: linear-gradient(145deg, #102010 0%, #254025 60%, #406040 100%); }
+    .product-card-img.bg-5 { background: linear-gradient(145deg, #201015 0%, #5a2030 60%, #904050 100%); }
+    .product-card-img.bg-6 { background: linear-gradient(145deg, #151020 0%, #3a2560 60%, #6050a0 100%); }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.65rem;
+      border-radius: 2px;
+      z-index: 2;
+    }
+
+    .card-badge.gold { background: var(--gold); color: var(--charcoal); }
+    .card-badge.terra { background: var(--terra); color: white; }
+    .card-badge.green { background: #2d7a4a; color: white; }
+    .card-badge.dark { background: rgba(26,26,26,0.85); color: white; }
+
+    .card-wishlist {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.25s;
+      cursor: pointer;
+    }
+
+    .product-card:hover .card-wishlist { opacity: 1; }
+
+    .quick-add-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26,26,26,0.9);
+      color: var(--ivory);
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .product-card:hover .quick-add-bar { transform: translateY(0); }
+
+    .card-body {
+      padding: 1rem 1rem 1.2rem;
+    }
+
+    .card-origin {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .card-name {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.68rem;
+    }
+
+    .card-stars { color: var(--gold); letter-spacing: -1px; font-size: 0.72rem; }
+    .card-rating-num { color: var(--charcoal); font-weight: 600; }
+    .card-rating-count { color: var(--gray-brand); }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-price-block {}
+
+    .c-price {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--terra);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .c-original {
+      font-size: 0.72rem;
+      color: var(--gray-brand);
+      text-decoration: line-through;
+    }
+
+    .btn-cart-small {
+      background: var(--terra);
+      color: white;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.5rem 0.9rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-cart-small:hover { background: var(--terra-dark); }
+
+    /* ===================== PAGINATION ===================== */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
+
+    .page-btn {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      background: var(--white);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .page-btn:hover {
+      border-color: var(--charcoal);
+    }
+
+    .page-btn.active {
+      background: var(--charcoal);
+      color: var(--ivory);
+      border-color: var(--charcoal);
+    }
+
+    .page-btn.disabled {
+      opacity: 0.4;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* ===================== TRUST BAR ===================== */
+    .trust-bar {
+      background: var(--charcoal);
+      padding: 1.2rem 2rem;
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .trust-icon {
+      font-size: 1.1rem;
+    }
+
+    .trust-text strong {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ivory);
+    }
+
+    .trust-text span {
+      font-size: 0.65rem;
+      color: rgba(249,245,238,0.5);
+    }
+
+    /* ===================== FEATURED COLLECTIONS STRIP ===================== */
+    .featured-strip {
+      background: var(--cream);
+      padding: 3rem 2rem;
+    }
+
+    .featured-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .featured-strip-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-strip-title em { font-style: italic; color: var(--terra); }
+
+    .featured-cards-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .featured-mini-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+
+    .featured-mini-card:hover {
+      border-color: rgba(200,168,75,0.4);
+      box-shadow: 0 8px 24px rgba(26,26,26,0.08);
+    }
+
+    .fmc-img {
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .fmc-img.c1 { background: linear-gradient(135deg, #5a2010, #c05030); }
+    .fmc-img.c2 { background: linear-gradient(135deg, #1a1040, #6055c0); }
+    .fmc-img.c3 { background: linear-gradient(135deg, #102010, #406040); }
+    .fmc-img.c4 { background: linear-gradient(135deg, #3a1a0a, #8a5025); }
+
+    .fmc-body {
+      padding: 0.85rem;
+    }
+
+    .fmc-name {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.2rem;
+    }
+
+    .fmc-count {
+      font-size: 0.7rem;
+      color: var(--gray-brand);
+    }
+
+    /* ===================== FOOTER ===================== */
+    .footer {
+      background: var(--charcoal);
+      color: rgba(249,245,238,0.7);
+      padding: 3rem 2rem 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--ivory);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-brand-tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand-desc {
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: rgba(249,245,238,0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-social-link {
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: rgba(249,245,238,0.7);
+      transition: all 0.2s;
+    }
+
+    .footer-social-link:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+
+    .footer-col-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ivory);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: rgba(249,245,238,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom-text { font-size: 0.75rem; color: rgba(249,245,238,0.3); }
+
+    .footer-payments {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .payment-chip {
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(249,245,238,0.5);
+    }
+
+    /* ===================== WHATSAPP ===================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .whatsapp-tooltip {
+      background: var(--charcoal);
+      color: var(--ivory);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .whatsapp-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: var(--charcoal);
+      border-right: 0;
+    }
+
+    .whatsapp-btn {
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-decoration: none;
+      font-size: 1.5rem;
+      position: relative;
+    }
+
+    .whatsapp-btn:hover { transform: scale(1.08); }
+
+    .whatsapp-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      opacity: 0.4;
+      animation: pulse 2.5s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.4; }
+      70% { transform: scale(1.6); opacity: 0; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    @media (max-width: 1024px) {
+      .shop-layout { grid-template-columns: 1fr; }
+      .sidebar-filters { position: static; display: none; }
+      .products-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger-btn { display: flex; }
+      .navbar-nav { display: none; }
+      .products-grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .featured-cards-row { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement -->
+  <div style="background: var(--terra); padding: 0.55rem 2rem; text-align:center; font-size:0.72rem; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.92);">
+    Free shipping on all orders above ₹999 &nbsp;·&nbsp; <strong style="color:#e0c46a;">Use SACRED10 for 10% off</strong> &nbsp;·&nbsp; Every purchase is Lab Certified from Nepal
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+      <span class="navbar-logo-text">Sanoosha</span>
+      <span class="navbar-logo-sub">Sacred Collection</span>
+    </a>
+
+    <ul class="navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#" class="active">Collection</a></li>
+      <li><a href="#">Rudraksha</a></li>
+      <li><a href="#">Crystals</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Journal</a></li>
+    </ul>
+
+    <div class="navbar-actions">
+      <button class="navbar-icon-btn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="navbar-icon-btn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+      <button class="navbar-icon-btn" style="position:relative">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-badge">3</span>
+      </button>
+      <button class="hamburger-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="shop-hero">
+    <div class="shop-hero-pattern">
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+      <div class="hero-circle"></div>
+    </div>
+
+    <div class="shop-hero-inner">
+      <div class="shop-hero-eyebrow">Nepal · Lab Certified · Pre-Energised</div>
+      <h1 class="shop-hero-title">The <em>Sacred</em> Collection</h1>
+      <p class="shop-hero-desc">Each piece in our collection is hand-selected from Nepal's sacred mountains — authenticated, ritually energised, and delivered to your doorstep with intention.</p>
+
+      <div class="shop-hero-stats">
+        <div class="shop-stat">
+          <span class="shop-stat-num">122</span>
+          <span class="shop-stat-label">Products</span>
+        </div>
+        <div class="shop-stat">
+          <span class="shop-stat-num">4.9★</span>
+          <span class="shop-stat-label">Avg Rating</span>
+        </div>
+        <div class="shop-stat">
+          <span class="shop-stat-num">12K+</span>
+          <span class="shop-stat-label">Happy Seekers</span>
+        </div>
+        <div class="shop-stat">
+          <span class="shop-stat-num">100%</span>
+          <span class="shop-stat-label">Authentic</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-bar-inner">
+      <div class="category-pills">
+        <a href="#" class="category-pill active" onclick="setActive(this)">
+          All
+          <span class="category-pill-count">122</span>
+        </a>
+        <a href="#" class="category-pill" onclick="setActive(this)">
+          🔴 Rudraksha
+          <span class="category-pill-count">48</span>
+        </a>
+        <a href="#" class="category-pill" onclick="setActive(this)">
+          💎 Crystals
+          <span class="category-pill-count">32</span>
+        </a>
+        <a href="#" class="category-pill" onclick="setActive(this)">
+          📿 Malas
+          <span class="category-pill-count">24</span>
+        </a>
+        <a href="#" class="category-pill" onclick="setActive(this)">
+          🌸 Combo Sets
+          <span class="category-pill-count">18</span>
+        </a>
+      </div>
+
+      <div class="filter-right-controls">
+        <span class="results-count">122 results</span>
+        <select class="sort-select">
+          <option>Bestselling</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest First</option>
+          <option>Top Rated</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-toggle-btn active">⊞</button>
+          <button class="view-toggle-btn">☰</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Shop Layout -->
+  <div class="shop-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar-filters">
+
+      <div class="sidebar-filter-group">
+        <div class="filter-group-title">
+          Categories
+          <span class="filter-group-toggle">−</span>
+        </div>
+        <div class="filter-options">
+          <label class="filter-option checked">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">All Products</span>
+            <span class="filter-option-count">122</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Rudraksha Beads</span>
+            <span class="filter-option-count">48</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Crystal Bracelets</span>
+            <span class="filter-option-count">32</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Sacred Malas</span>
+            <span class="filter-option-count">24</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Combo Sets</span>
+            <span class="filter-option-count">18</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sidebar-filter-group">
+        <div class="filter-group-title">
+          Price Range
+          <span class="filter-group-toggle">−</span>
+        </div>
+        <div class="price-range-track">
+          <div class="price-range-fill"></div>
+          <div class="price-range-handle"></div>
+          <div class="price-range-handle"></div>
+        </div>
+        <div class="price-range-labels">
+          <span>₹499</span>
+          <span>₹25,000+</span>
+        </div>
+      </div>
+
+      <div class="sidebar-filter-group">
+        <div class="filter-group-title">
+          Mukhi (Faces)
+          <span class="filter-group-toggle">−</span>
+        </div>
+        <div class="filter-options">
+          <label class="filter-option checked">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">1 Mukhi (Ek Mukhi)</span>
+            <span class="filter-option-count">12</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">2 Mukhi</span>
+            <span class="filter-option-count">8</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">5 Mukhi</span>
+            <span class="filter-option-count">15</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">7 Mukhi</span>
+            <span class="filter-option-count">9</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Gauri Shankar</span>
+            <span class="filter-option-count">4</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sidebar-filter-group">
+        <div class="filter-group-title">
+          Crystal Type
+          <span class="filter-group-toggle">−</span>
+        </div>
+        <div class="filter-options">
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Amethyst</span>
+            <span class="filter-option-count">10</span>
+          </label>
+          <label class="filter-option checked">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Rose Quartz</span>
+            <span class="filter-option-count">8</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Lapis Lazuli</span>
+            <span class="filter-option-count">6</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Clear Quartz</span>
+            <span class="filter-option-count">8</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="sidebar-filter-group">
+        <div class="filter-group-title">
+          Availability
+          <span class="filter-group-toggle">−</span>
+        </div>
+        <div class="filter-options">
+          <label class="filter-option checked">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">In Stock</span>
+            <span class="filter-option-count">108</span>
+          </label>
+          <label class="filter-option">
+            <div class="filter-checkbox"></div>
+            <span class="filter-option-label">Pre-Order</span>
+            <span class="filter-option-count">14</span>
+          </label>
+        </div>
+      </div>
+
+      <button class="clear-filters-btn">Clear All Filters</button>
+    </aside>
+
+    <!-- PRODUCTS GRID -->
+    <div class="products-area">
+      <div class="products-grid-3">
+
+        <!-- Card 1 — normal -->
+        <div class="product-card">
+          <div class="product-card-img bg-1">
+            <div class="card-badge terra">Rare</div>
+            <div class="card-wishlist">♡</div>
+            <div class="quick-add-bar">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              Quick Add
+            </div>
+            🔴
+          </div>
+          <div class="card-body">
+            <div class="card-origin">1 Mukhi · Nepal</div>
+            <div class="card-name">1 Mukhi Rudraksha</div>
+            <div class="card-rating">
+              <span class="card-stars">★★★★★</span>
+              <span class="card-rating-num">4.9</span>
+              <span class="card-rating-count">(247)</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-block">
+                <span class="c-price">₹21,000</span>
+                <span class="c-original">₹28,000</span>
+              </div>
+              <button class="btn-cart-small">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 — HOVER DEMO (shows hover state) -->
+        <div class="product-card hover-demo">
+          <div class="product-card-img bg-2">
+            <div class="card-badge gold">Bestseller</div>
+            <div class="card-wishlist" style="opacity:1;">♡</div>
+            <div class="quick-add-bar" style="transform:translateY(0);">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              Quick Add
+            </div>
+            💎
+          </div>
+          <div class="card-body">
+            <div class="card-origin">Amethyst · Nepal</div>
+            <div class="card-name">Amethyst Bracelet</div>
+            <div class="card-rating">
+              <span class="card-stars">★★★★★</span>
+              <span class="card-rating-num">4.8</span>
+              <span class="card-rating-count">(189)</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-block">
+                <span class="c-price">₹1,299</span>
+                <span class="c-original">₹1,800</span>
+              </div>
+              <button class="btn-cart-small">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="product-card-img bg-3">
+            <div class="card-badge green">New</div>
+            <div class="card-wishlist">♡</div>
+            <div class="quick-add-bar">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              Quick Add
+            </div>
+            🔴
+          </div>
+          <div class="card-body">
+            <div class="card-origin">5 Mukhi · Nepal</div>
+            <div class="card-name">Panch Mukhi Mala — 108 Beads</div>
+            <div class="card-rating">
+              <span class="card-stars">★★★★★</span>
+              <span class="card-rating-num">4.9</span>
+              <span class="card-rating-count">(312)</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-block">
+                <span class="c-price">₹2,799</span>
+                <span class="c-original">₹3,500</span>
+              </div>
+              <button class="btn-cart-small">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+          <div class="product-card-img bg-4">
+            <div class="card-badge gold">Sacred</div>
+            <div class="card-wishlist">♡</div>
+            <div class="quick-add-bar">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              Quick Add
+            </div>
+            🌿
+          </div>
+          <div class="card-body">
+            <div class="card-origin">Rose Quartz · Nepal</div>
+            <div class="card-name">Rose Quartz Love Bracelet</div>
+            <div class="card-rating">
+              <span class="card-stars">★★★★★</span>
+              <span class="card-rating-num">4.7</span>
+              <span class="card-rating-count">(95)</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-block">
+                <span class="c-price">₹999</span>
+                <span class="c-original">₹1,400</span>
+              </div>
+              <button class="btn-cart-small">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="product-card">
+          <div class="product-card-img bg-5">
+            <div class="card-badge dark">Limited</div>
+            <div class="card-wishlist">♡</div>
+            <div class="quick-add-bar">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              Quick Add
+            </div>
+            🔴
+          </div>
+          <div class="card-body">
+            <div class="card-origin">Gauri Shankar · Nepal</div>
+            <div class="card-name">Gauri Shankar Rudraksha</div>
+            <div class="card-rating">
+              <span class="card-stars">★★★★★</span>
+              <span class="card-rating-num">5.0</span>
+              <span class="card-rating-count">(44)</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-block">
+                <span class="c-price">₹8,500</span>
+                <span class="c-original">₹12,000</span>
+              </div>
+              <button class="btn-cart-small">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="product-card">
+          <div class="product-card-img bg-6">
+            <div class="card-badge gold">Combo</div>
+            <div class="card-wishlist">♡</div>
+            <div class="quick-add-bar">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              Quick Add
+            </div>
+            📿
+          </div>
+          <div class="card-body">
+            <div class="card-origin">Combo · Rudraksha + Crystal</div>
+            <div class="card-name">Serenity Combo Set</div>
+            <div class="card-rating">
+              <span class="card-stars">★★★★★</span>
+              <span class="card-rating-num">4.9</span>
+              <span class="card-rating-count">(128)</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-price-block">
+                <span class="c-price">₹3,499</span>
+                <span class="c-original">₹4,800</span>
+              </div>
+              <button class="btn-cart-small">Add</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <a href="#" class="page-btn disabled">←</a>
+        <a href="#" class="page-btn active">1</a>
+        <a href="#" class="page-btn">2</a>
+        <a href="#" class="page-btn">3</a>
+        <span style="color: var(--gray-brand); font-size:0.85rem; padding:0 0.25rem;">…</span>
+        <a href="#" class="page-btn">8</a>
+        <a href="#" class="page-btn">→</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <span class="trust-icon">🏔️</span>
+        <div class="trust-text">
+          <strong>Nepal Sourced</strong>
+          <span>Direct from sacred farms</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🔬</span>
+        <div class="trust-text">
+          <strong>Lab Certified</strong>
+          <span>Certificate with every order</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🕉️</span>
+        <div class="trust-text">
+          <strong>Pre-Energised</strong>
+          <span>Vedic prana pratishtha</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🚚</span>
+        <div class="trust-text">
+          <strong>Free Shipping</strong>
+          <span>Orders above ₹999</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🔄</span>
+        <div class="trust-text">
+          <strong>7-Day Returns</strong>
+          <span>Hassle-free returns</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Categories Strip -->
+  <div class="featured-strip">
+    <div class="featured-strip-inner">
+      <h3 class="featured-strip-title">Shop by <em>Intention</em></h3>
+      <div class="featured-cards-row">
+        <a href="#" class="featured-mini-card">
+          <div class="fmc-img c1">🔴</div>
+          <div class="fmc-body">
+            <div class="fmc-name">For Meditation</div>
+            <div class="fmc-count">28 products</div>
+          </div>
+        </a>
+        <a href="#" class="featured-mini-card">
+          <div class="fmc-img c2">💎</div>
+          <div class="fmc-body">
+            <div class="fmc-name">For Love & Healing</div>
+            <div class="fmc-count">19 products</div>
+          </div>
+        </a>
+        <a href="#" class="featured-mini-card">
+          <div class="fmc-img c3">🌿</div>
+          <div class="fmc-body">
+            <div class="fmc-name">For Abundance</div>
+            <div class="fmc-count">22 products</div>
+          </div>
+        </a>
+        <a href="#" class="featured-mini-card">
+          <div class="fmc-img c4">📿</div>
+          <div class="fmc-body">
+            <div class="fmc-name">Sacred Gifting</div>
+            <div class="fmc-count">16 products</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-brand-logo">Sanoosha</span>
+        <span class="footer-brand-tagline">Sacred Collection · Est. 2018</span>
+        <p class="footer-brand-desc">Bringing the authentic spiritual energy of Nepal's sacred Rudraksha beads and healing crystals to seekers across India and the world.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link">f</a>
+          <a href="#" class="footer-social-link">in</a>
+          <a href="#" class="footer-social-link">yt</a>
+          <a href="#" class="footer-social-link">📸</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Collections</div>
+        <ul class="footer-links">
+          <li><a href="#">Rudraksha Beads</a></li>
+          <li><a href="#">Crystal Bracelets</a></li>
+          <li><a href="#">Sacred Malas</a></li>
+          <li><a href="#">Combo Sets</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Help</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Authenticity Guide</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="#">📍 Kolkata, West Bengal</a></li>
+          <li><a href="#">📞 +91 92321 54621</a></li>
+          <li><a href="#">✉ hello@sanoosha.in</a></li>
+          <li style="margin-top:1rem;"><a href="#" style="color: var(--gold); font-size:0.75rem;">WhatsApp Us →</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-bottom-text">© 2025 Sanoosha Premium. All rights reserved.</span>
+      <div class="footer-payments">
+        <span class="payment-chip">Visa</span>
+        <span class="payment-chip">Mastercard</span>
+        <span class="payment-chip">UPI</span>
+        <span class="payment-chip">Razorpay</span>
+        <span class="payment-chip">COD</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <div class="whatsapp-float">
+    <div class="whatsapp-tooltip">Need help choosing?</div>
+    <a href="https://wa.me/919232154621" class="whatsapp-btn">
+      <div class="whatsapp-pulse"></div>
+      <span>💬</span>
+    </a>
+  </div>
+
+  <script>
+    function setActive(el) {
+      event.preventDefault();
+      document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

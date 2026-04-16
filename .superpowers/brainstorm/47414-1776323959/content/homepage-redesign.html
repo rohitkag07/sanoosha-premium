@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanoosha Premium — Sacred Rudraksha & Crystals from Nepal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terra: #8B3A2A;
+      --terra-dark: #6e2e20;
+      --terra-light: #a8493a;
+      --gold: #C8A84B;
+      --gold-light: #e0c46a;
+      --gold-pale: #f5ead8;
+      --ivory: #F9F5EE;
+      --cream: #FAF7F2;
+      --charcoal: #1A1A1A;
+      --gray-brand: #6B6B6B;
+      --gray-light: #E8E2D9;
+      --white: #ffffff;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ===================== NAVBAR ===================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249, 245, 238, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+    }
+
+    .navbar-logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .navbar-logo-sub {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .navbar-nav a {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .navbar-nav a:hover { color: var(--terra); }
+
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .navbar-icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .navbar-icon-btn:hover { background: var(--gray-light); }
+
+    .cart-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: var(--terra);
+      color: white;
+      font-size: 0.55rem;
+      font-weight: 600;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Mobile menu (visual only) */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--ivory);
+      z-index: 99;
+      padding: 2rem;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .mobile-menu-link {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-light);
+      display: block;
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2a1a10 0%, #3d2415 30%, #5c3320 55%, #7a4030 75%, #8B3A2A 100%);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(200, 168, 75, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(200, 168, 75, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(139, 58, 42, 0.3) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-ornament {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 168, 75, 0.12);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-ornament::before {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 168, 75, 0.08);
+    }
+
+    .hero-ornament::after {
+      content: '';
+      position: absolute;
+      inset: 80px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 168, 75, 0.05);
+    }
+
+    .hero-image-side {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 48%;
+      background: linear-gradient(135deg, #4a2518 0%, #6b3527 40%, #8B4A3A 70%, #a05040 100%);
+      clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-product-placeholder {
+      width: 280px;
+      height: 320px;
+      background: linear-gradient(145deg, rgba(200,168,75,0.2) 0%, rgba(139,58,42,0.4) 50%, rgba(42,26,16,0.6) 100%);
+      border-radius: 50% 50% 45% 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(200,168,75,0.2);
+    }
+
+    .hero-product-placeholder::after {
+      content: '🔴';
+      font-size: 5rem;
+      opacity: 0.7;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,168,75,0.15) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 5rem 0 6rem;
+      max-width: 600px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--ivory);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(249, 245, 238, 0.72);
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(200,168,75,0.3);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ivory);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.9rem 1.8rem;
+      border: 1px solid rgba(249,245,238,0.35);
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(249,245,238,0.7);
+      background: rgba(249,245,238,0.06);
+    }
+
+    .hero-stats {
+      position: absolute;
+      bottom: 3rem;
+      left: 6rem;
+      display: flex;
+      gap: 3rem;
+      z-index: 2;
+    }
+
+    .hero-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(249,245,238,0.55);
+      margin-top: 4px;
+    }
+
+    /* ===================== TRUST STRIP ===================== */
+    .trust-strip {
+      background: var(--charcoal);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .trust-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      flex: 1;
+      justify-content: center;
+    }
+
+    .trust-badge:last-child { border-right: none; }
+
+    .trust-badge-icon {
+      width: 28px;
+      height: 28px;
+      background: rgba(200,168,75,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .trust-badge-text strong {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ivory);
+      letter-spacing: 0.03em;
+    }
+
+    .trust-badge-text span {
+      font-size: 0.65rem;
+      color: rgba(249,245,238,0.5);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===================== SECTION HEADER ===================== */
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-eyebrow::before, .section-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .section-desc {
+      font-size: 0.9rem;
+      color: var(--gray-brand);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===================== FEATURED COLLECTION ===================== */
+    .featured-section {
+      background: var(--cream);
+      padding: 5rem 2rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--gray-light);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(26,26,26,0.12);
+      border-color: rgba(200,168,75,0.3);
+    }
+
+    .product-card-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+    }
+
+    .product-card-img-placeholder.rudraksha {
+      background: linear-gradient(135deg, #3d1f12 0%, #6b3020 40%, #9a4a32 70%, #c07850 100%);
+    }
+
+    .product-card-img-placeholder.crystal {
+      background: linear-gradient(135deg, #1a2040 0%, #2d3a6e 40%, #4a5ab0 70%, #8090d8 100%);
+    }
+
+    .product-card-img-placeholder.mala {
+      background: linear-gradient(135deg, #2a1505 0%, #4a2a10 40%, #7a4a20 70%, #a06830 100%);
+    }
+
+    .product-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      z-index: 2;
+    }
+
+    .product-card-wishlist {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.25s;
+      cursor: pointer;
+    }
+
+    .product-card:hover .product-card-wishlist { opacity: 1; }
+
+    .product-card-quick-add {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26,26,26,0.88);
+      color: var(--ivory);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.75rem;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.25s;
+      z-index: 2;
+    }
+
+    .product-card:hover .product-card-quick-add { transform: translateY(0); }
+
+    .product-card-body {
+      padding: 1.25rem 1.25rem 1.5rem;
+    }
+
+    .product-card-origin {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .product-card-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card-desc {
+      font-size: 0.78rem;
+      color: var(--gray-brand);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .product-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-card-price {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-current {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--terra);
+    }
+
+    .price-original {
+      font-size: 0.75rem;
+      color: var(--gray-brand);
+      text-decoration: line-through;
+    }
+
+    .product-card-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.72rem;
+      color: var(--gray-brand);
+    }
+
+    .stars { color: var(--gold); letter-spacing: -1px; }
+
+    .btn-add-cart {
+      background: var(--terra);
+      color: white;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 1.1rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-add-cart:hover {
+      background: var(--terra-dark);
+      transform: translateY(-1px);
+    }
+
+    .view-all-wrap {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--charcoal);
+      border: 1.5px solid var(--charcoal);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 2.5rem;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s;
+    }
+
+    .btn-outline:hover {
+      background: var(--charcoal);
+      color: var(--ivory);
+    }
+
+    /* ===================== LIFESTYLE BANNER ===================== */
+    .lifestyle-banner {
+      background: linear-gradient(90deg, #1a0d08 0%, #2d1510 50%, #1a0d08 100%);
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lifestyle-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(200,168,75,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 50%, rgba(139,58,42,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .lifestyle-banner-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .lifestyle-text-side {}
+
+    .lifestyle-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .lifestyle-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--ivory);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .lifestyle-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .lifestyle-body {
+      font-size: 0.88rem;
+      color: rgba(249,245,238,0.65);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .lifestyle-image-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .lifestyle-img-box {
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .lifestyle-img-box:nth-child(1) {
+      background: linear-gradient(145deg, #4a2010 0%, #8b3a2a 100%);
+      margin-top: 2rem;
+    }
+
+    .lifestyle-img-box:nth-child(2) {
+      background: linear-gradient(145deg, #1a1a2e 0%, #4a4ab0 100%);
+    }
+
+    .lifestyle-img-box:nth-child(3) {
+      background: linear-gradient(145deg, #2a1a05 0%, #7a5020 100%);
+    }
+
+    .lifestyle-img-box:nth-child(4) {
+      background: linear-gradient(145deg, #1a2a1a 0%, #3a6a3a 100%);
+      margin-top: -2rem;
+    }
+
+    /* ===================== WHY SANOOSHA ===================== */
+    .why-section {
+      background: var(--ivory);
+      padding: 5rem 2rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(200,168,75,0.4);
+      box-shadow: 0 12px 40px rgba(26,26,26,0.08);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--gold-pale), rgba(200,168,75,0.12));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 1.5rem;
+      border: 1px solid rgba(200,168,75,0.25);
+    }
+
+    .feature-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-desc {
+      font-size: 0.82rem;
+      color: var(--gray-brand);
+      line-height: 1.75;
+    }
+
+    /* ===================== TESTIMONIALS ===================== */
+    .testimonials-section {
+      background: var(--cream);
+      padding: 5rem 2rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 4px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .testimonial-quote {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--gold);
+      line-height: 0.5;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .testimonial-text {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--terra), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .testimonial-author-info strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .testimonial-author-info span {
+      font-size: 0.72rem;
+      color: var(--gray-brand);
+    }
+
+    .testimonial-stars {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: -1px;
+    }
+
+    /* ===================== NEWSLETTER ===================== */
+    .newsletter-section {
+      background: linear-gradient(135deg, #1a0a05 0%, #2e1008 50%, #1a0a05 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(200,168,75,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .newsletter-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .newsletter-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--ivory);
+      margin-bottom: 0.75rem;
+    }
+
+    .newsletter-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .newsletter-desc {
+      font-size: 0.85rem;
+      color: rgba(249,245,238,0.6);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(200,168,75,0.35);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: none;
+      color: var(--ivory);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      padding: 0.9rem 1.2rem;
+      outline: none;
+    }
+
+    .newsletter-input::placeholder {
+      color: rgba(249,245,238,0.4);
+    }
+
+    .newsletter-btn {
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 1.5rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .newsletter-btn:hover { background: var(--gold-light); }
+
+    /* ===================== FOOTER ===================== */
+    .footer {
+      background: var(--charcoal);
+      color: rgba(249,245,238,0.7);
+      padding: 4rem 2rem 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--ivory);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-brand-tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand-desc {
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: rgba(249,245,238,0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-social-link {
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: rgba(249,245,238,0.7);
+      transition: all 0.2s;
+    }
+
+    .footer-social-link:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ivory);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: rgba(249,245,238,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom-text {
+      font-size: 0.75rem;
+      color: rgba(249,245,238,0.3);
+    }
+
+    .footer-payments {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .payment-chip {
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(249,245,238,0.5);
+    }
+
+    /* ===================== WHATSAPP FLOAT ===================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .whatsapp-tooltip {
+      background: var(--charcoal);
+      color: var(--ivory);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .whatsapp-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: var(--charcoal);
+      border-right: 0;
+    }
+
+    .whatsapp-btn {
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+    }
+
+    .whatsapp-pulse {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      opacity: 0.4;
+      animation: pulse 2.5s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.4; }
+      70% { transform: scale(1.6); opacity: 0; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    /* ===================== ANNOUNCEMENT BAR ===================== */
+    .announcement-bar {
+      background: var(--terra);
+      padding: 0.55rem 2rem;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .announcement-bar strong { color: var(--gold-light); }
+
+    /* ===================== CATEGORY SHOWCASE ===================== */
+    .categories-section {
+      background: var(--ivory);
+      padding: 5rem 2rem 2rem;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .category-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: flex-end;
+      transition: all 0.3s;
+    }
+
+    .category-card:first-child { grid-row: span 2; aspect-ratio: unset; min-height: 400px; }
+
+    .category-card:hover { transform: scale(1.02); }
+
+    .category-card:hover .category-overlay { background: rgba(26,26,26,0.5); }
+
+    .category-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .category-bg.bg-1 { background: linear-gradient(160deg, #3d1a0a 0%, #7a3520 50%, #c05030 100%); }
+    .category-bg.bg-2 { background: linear-gradient(160deg, #1a1040 0%, #3a2a80 50%, #6055c0 100%); }
+    .category-bg.bg-3 { background: linear-gradient(160deg, #102010 0%, #254025 50%, #406040 100%); }
+    .category-bg.bg-4 { background: linear-gradient(160deg, #201015 0%, #5a2030 50%, #904050 100%); }
+
+    .category-bg-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      opacity: 0.25;
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.75) 0%, transparent 60%);
+      transition: background 0.3s;
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 2;
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    .category-count {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .category-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--ivory);
+      line-height: 1.2;
+    }
+
+    .category-arrow {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 32px;
+      height: 32px;
+      background: rgba(200,168,75,0.2);
+      border: 1px solid rgba(200,168,75,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--gold);
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger-btn { display: flex; }
+      .navbar-nav { display: none; }
+      .hero-content { padding: 0 2rem; }
+      .hero-image-side { display: none; }
+      .hero-stats { left: 2rem; bottom: 2rem; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .trust-badge { padding: 0.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    Use code <strong>FIRSTORDER</strong> for 10% off your first purchase &nbsp;·&nbsp; Free shipping on orders above ₹999 &nbsp;·&nbsp; Authentic Nepal-sourced Rudraksha
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+      <span class="navbar-logo-text">Sanoosha</span>
+      <span class="navbar-logo-sub">Sacred Collection</span>
+    </a>
+
+    <ul class="navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Rudraksha</a></li>
+      <li><a href="#">Crystals</a></li>
+      <li><a href="#">Malas</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Journal</a></li>
+    </ul>
+
+    <div class="navbar-actions">
+      <button class="navbar-icon-btn" aria-label="Search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+      <button class="navbar-icon-btn" aria-label="Wishlist">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </button>
+      <button class="navbar-icon-btn" aria-label="Account">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+      <button class="navbar-icon-btn" aria-label="Cart" style="position:relative">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="cart-badge">3</span>
+      </button>
+      <button class="hamburger-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-ornament"></div>
+
+    <div class="hero-image-side">
+      <div class="hero-glow"></div>
+      <div class="hero-product-placeholder"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">Sourced from Nepal's Sacred Mountains</div>
+      <h1 class="hero-title">
+        Wear the <em>Sacred Energy</em><br />
+        of the Himalayas
+      </h1>
+      <p class="hero-desc">
+        Each Rudraksha bead and crystal bracelet carries the ancient wisdom of Nepal's sacred rivers and mountains — hand-selected, lab-certified, and pre-energised for your spiritual journey.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#" class="btn-primary">
+          Explore Collection
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="btn-ghost">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat-item">
+        <span class="hero-stat-number">12K+</span>
+        <span class="hero-stat-label">Happy Seekers</span>
+      </div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-number">120+</span>
+        <span class="hero-stat-label">Sacred Beads</span>
+      </div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-number">100%</span>
+        <span class="hero-stat-label">Lab Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip">
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <div class="trust-badge-icon">🏔️</div>
+        <div class="trust-badge-text">
+          <strong>Nepal Origin</strong>
+          <span>Direct from sacred farms</span>
+        </div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">🔬</div>
+        <div class="trust-badge-text">
+          <strong>Lab Certified</strong>
+          <span>Third-party authenticated</span>
+        </div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">🕉️</div>
+        <div class="trust-badge-text">
+          <strong>Pre-Energised</strong>
+          <span>Vedic rituals performed</span>
+        </div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">📦</div>
+        <div class="trust-badge-text">
+          <strong>Free Shipping</strong>
+          <span>On all orders ₹999+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Showcase -->
+  <section class="categories-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Shop by Category</div>
+        <h2 class="section-title">Sacred <em>Traditions</em></h2>
+        <p class="section-desc">Explore our curated categories of Nepal's most revered spiritual treasures</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="category-bg bg-1">
+            <div class="category-bg-icon">🔴</div>
+          </div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <div class="category-count">48 products</div>
+            <div class="category-name">Rudraksha<br />Beads</div>
+          </div>
+          <div class="category-arrow">→</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-bg bg-2">
+            <div class="category-bg-icon">💎</div>
+          </div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <div class="category-count">32 products</div>
+            <div class="category-name">Crystal Bracelets</div>
+          </div>
+          <div class="category-arrow">→</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-bg bg-3">
+          <div class="category-bg-icon">📿</div>
+          </div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <div class="category-count">24 products</div>
+            <div class="category-name">Sacred Malas</div>
+          </div>
+          <div class="category-arrow">→</div>
+        </div>
+
+        <div class="category-card">
+          <div class="category-bg bg-4">
+          <div class="category-bg-icon">🌸</div>
+          </div>
+          <div class="category-overlay"></div>
+          <div class="category-content">
+            <div class="category-count">18 products</div>
+            <div class="category-name">Combo Sets</div>
+          </div>
+          <div class="category-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Collection -->
+  <section class="featured-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Most Revered</div>
+        <h2 class="section-title">Featured <em>Collection</em></h2>
+        <p class="section-desc">Handpicked by our spiritual advisors for their purity, energy, and authenticity</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-card-image">
+            <div class="product-card-img-placeholder rudraksha">🔴</div>
+            <div class="product-card-badge">Bestseller</div>
+            <div class="product-card-wishlist">♡</div>
+            <div class="product-card-quick-add">+ Quick Add</div>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-origin">1 Mukhi · Nepal</div>
+            <div class="product-card-name">1 Mukhi Rudraksha</div>
+            <p class="product-card-desc">The rarest of all Rudraksha beads, representing Lord Shiva in his purest form. Bestows liberation and divine consciousness.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">
+                <span class="price-current">₹21,000</span>
+                <span class="price-original">₹28,000</span>
+              </div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-card-image">
+            <div class="product-card-img-placeholder crystal">💎</div>
+            <div class="product-card-badge">New</div>
+            <div class="product-card-wishlist">♡</div>
+            <div class="product-card-quick-add">+ Quick Add</div>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-origin">Amethyst · Nepal</div>
+            <div class="product-card-name">Amethyst Crystal Bracelet</div>
+            <p class="product-card-desc">Premium Himalayan amethyst beads strung on elastic. Known to calm the mind, improve intuition, and protect the aura.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">
+                <span class="price-current">₹1,299</span>
+                <span class="price-original">₹1,800</span>
+              </div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-card-image">
+            <div class="product-card-img-placeholder mala">📿</div>
+            <div class="product-card-badge">Sacred</div>
+            <div class="product-card-wishlist">♡</div>
+            <div class="product-card-quick-add">+ Quick Add</div>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-origin">5 Mukhi · Nepal</div>
+            <div class="product-card-name">Panch Mukhi Mala — 108 Beads</div>
+            <p class="product-card-desc">A classic 108-bead mala of 5-faced Rudraksha, the most common yet deeply powerful bead for daily japa meditation practice.</p>
+            <div class="product-card-footer">
+              <div class="product-card-price">
+                <span class="price-current">₹2,799</span>
+                <span class="price-original">₹3,500</span>
+              </div>
+              <button class="btn-add-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-all-wrap">
+        <a href="#" class="btn-outline">
+          View All Products
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle Banner -->
+  <section class="lifestyle-banner">
+    <div class="lifestyle-banner-inner">
+      <div class="lifestyle-text-side">
+        <div class="lifestyle-eyebrow">The Sanoosha Difference</div>
+        <h2 class="lifestyle-title">
+          Spirituality Is Not<br />
+          a <em>Fashion Statement</em>
+        </h2>
+        <p class="lifestyle-body">
+          At Sanoosha, we believe every bead carries a story that begins in the sacred forests of Nepal. Our team travels to the source — meeting the farmers, performing quality checks, and ensuring every piece in our collection meets the ancient standards described in Vedic texts.
+        </p>
+        <p class="lifestyle-body" style="margin-top: -0.5rem;">
+          From selecting the bead to the final ritual energization, we take every step seriously so your spiritual practice begins on the right foundation.
+        </p>
+        <a href="#" class="btn-primary" style="margin-top: 0.5rem;">Our Sourcing Process →</a>
+      </div>
+
+      <div class="lifestyle-image-side">
+        <div class="lifestyle-img-box">🏔️</div>
+        <div class="lifestyle-img-box">🔴</div>
+        <div class="lifestyle-img-box">🕉️</div>
+        <div class="lifestyle-img-box">🌿</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Sanoosha -->
+  <section class="why-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Why Choose Us</div>
+        <h2 class="section-title">The <em>Sanoosha</em> Promise</h2>
+        <p class="section-desc">Every promise we make is backed by practice, not just words</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏔️</div>
+          <h3 class="feature-title">Direct Nepal Sourcing</h3>
+          <p class="feature-desc">We work directly with trusted farmers in the Pashupatinath region of Nepal, ensuring zero middlemen and maximum quality at every step of the journey.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔬</div>
+          <h3 class="feature-title">Lab Authenticated</h3>
+          <p class="feature-desc">Every Rudraksha bead is tested by a third-party gemological lab. You receive a certificate of authenticity with your order — no compromises on purity.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🕉️</div>
+          <h3 class="feature-title">Vedic Energization</h3>
+          <p class="feature-desc">Before shipping, each piece undergoes a traditional Vedic prana pratishtha ritual performed by experienced pandits to activate its spiritual energy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">Sacred Stories</div>
+        <h2 class="section-title">What Our <em>Community</em> Says</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">I've been wearing the 5 Mukhi Mala for 3 months now. My meditation sessions have become incredibly deep. The quality is unlike anything I've bought before — you can feel the energy.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">P</div>
+            <div class="testimonial-author-info">
+              <strong>Priya Sharma</strong>
+              <span>Bangalore, Karnataka</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Got the 1 Mukhi Rudraksha for my father's birthday. The packaging is luxurious, the certificate of authenticity is detailed, and most importantly — it's real. Will order again.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div class="testimonial-author-info">
+              <strong>Arjun Menon</strong>
+              <span>Kochi, Kerala</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The amethyst bracelet is stunning — the stones are high quality and the band is very comfortable. Customer service helped me choose the right crystal for my needs. Highly recommend.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">N</div>
+            <div class="testimonial-author-info">
+              <strong>Neha Agarwal</strong>
+              <span>Mumbai, Maharashtra</span>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="section-eyebrow" style="color: var(--gold); font-size:0.68rem; font-weight:500; letter-spacing:0.25em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; gap:0.7rem; margin-bottom:1rem;">
+        <span style="display:inline-block; width:24px; height:1px; background:var(--gold);"></span>
+        Sacred Letters
+        <span style="display:inline-block; width:24px; height:1px; background:var(--gold);"></span>
+      </div>
+      <h2 class="newsletter-title">Join the <em>Inner Circle</em></h2>
+      <p class="newsletter-desc">Receive moon-cycle rituals, new arrivals, and exclusive offers — delivered to your inbox with intention.</p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="your@email.com" />
+        <button class="newsletter-btn">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <span class="footer-brand-logo">Sanoosha</span>
+        <span class="footer-brand-tagline">Sacred Collection · Est. 2018</span>
+        <p class="footer-brand-desc">Bringing the authentic spiritual energy of Nepal's sacred Rudraksha beads and healing crystals to seekers across India and the world.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link">f</a>
+          <a href="#" class="footer-social-link">in</a>
+          <a href="#" class="footer-social-link">yt</a>
+          <a href="#" class="footer-social-link">📸</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Collections</div>
+        <ul class="footer-links">
+          <li><a href="#">Rudraksha Beads</a></li>
+          <li><a href="#">Crystal Bracelets</a></li>
+          <li><a href="#">Sacred Malas</a></li>
+          <li><a href="#">Combo Sets</a></li>
+          <li><a href="#">Gifts</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Help</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Authenticity Guide</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="#">📍 Kolkata, West Bengal</a></li>
+          <li><a href="#">📞 +91 92321 54621</a></li>
+          <li><a href="#">✉ hello@sanoosha.in</a></li>
+          <li style="margin-top: 1rem;">
+            <a href="#" style="color: var(--gold); font-size:0.75rem;">WhatsApp Us →</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-bottom-text">© 2025 Sanoosha Premium. All rights reserved. · <a href="#" style="color:inherit; text-decoration:none;">Privacy Policy</a> · <a href="#" style="color:inherit; text-decoration:none;">Terms</a></span>
+      <div class="footer-payments">
+        <span class="payment-chip">Visa</span>
+        <span class="payment-chip">Mastercard</span>
+        <span class="payment-chip">UPI</span>
+        <span class="payment-chip">Razorpay</span>
+        <span class="payment-chip">COD</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <div class="whatsapp-float">
+    <div class="whatsapp-tooltip">Chat with us on WhatsApp</div>
+    <a href="https://wa.me/919232154621" class="whatsapp-btn" style="position:relative;">
+      <div class="whatsapp-pulse"></div>
+      <span>💬</span>
+    </a>
+  </div>
+
+</body>
+</html>

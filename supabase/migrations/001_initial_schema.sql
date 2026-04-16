@@ -20,15 +20,6 @@ create policy "Users can update own profile"
   on public.profiles for update
   using (auth.uid() = id);
 
-create policy "Admins can view all profiles"
-  on public.profiles for select
-  using (
-    exists (
-      select 1 from public.profiles p
-      where p.id = auth.uid() and p.is_admin = true
-    )
-  );
-
 -- Auto-create profile on signup
 create or replace function public.handle_new_user()
 returns trigger as $$
@@ -221,22 +212,3 @@ begin
   return 'SNS-' || nextval('order_number_seq')::text;
 end;
 $$ language plpgsql;
-
--- STORAGE BUCKET for product images
-insert into storage.buckets (id, name, public)
-values ('product-images', 'product-images', true)
-on conflict do nothing;
-
-create policy "Anyone can view product images"
-  on storage.objects for select
-  using (bucket_id = 'product-images');
-
-create policy "Only admins can upload product images"
-  on storage.objects for insert
-  with check (
-    bucket_id = 'product-images' and
-    exists (
-      select 1 from public.profiles
-      where id = auth.uid() and is_admin = true
-    )
-  );
