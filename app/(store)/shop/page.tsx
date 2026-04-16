@@ -1,7 +1,5 @@
 export const dynamic = 'force-dynamic'
 
-import Link from 'next/link'
-import { ShoppingBag, Sparkles } from 'lucide-react'
 import ShopGrid from '@/components/store/ShopGrid'
 import { createClient } from '@/lib/supabase/server'
 import type { Product } from '@/types'
@@ -18,70 +16,88 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
     .select('*')
     .order('created_at', { ascending: false })
 
-  if (error) {
-    console.error('Failed to load products', error)
-  }
+  if (error) console.error('Failed to load products', error)
+
+  const list = (products as Product[]) ?? []
 
   return (
     <>
-      {/* ─── Premium Hero Banner ─── */}
-      <section className="relative overflow-hidden bg-charcoal">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-[0.04]"
+      {/* ── Dark Hero ── */}
+      <section className="relative bg-charcoal overflow-hidden">
+        {/* Radial glows */}
+        <div className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, #C8A84B 1px, transparent 1px), radial-gradient(circle at 80% 20%, #C8A84B 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
+            background: `
+              radial-gradient(ellipse at 20% 50%, rgba(139,58,42,0.28) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 50%, rgba(200,168,75,0.10) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 100%, rgba(200,168,75,0.06) 0%, transparent 40%)
+            `,
           }}
         />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/5 to-transparent" />
+        {/* Concentric circles */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {[600, 800, 1000].map(size => (
+            <div
+              key={size}
+              className="absolute rounded-full border border-gold/[0.07]"
+              style={{ width: size, height: size }}
+            />
+          ))}
+        </div>
 
-        <div className="relative container mx-auto px-4 max-w-[1240px] py-20 md:py-28">
-          <div className="flex flex-col items-center text-center">
-            {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-px w-8 bg-gold/60" />
-              <Sparkles size={14} className="text-gold" />
-              <span className="text-[11px] font-semibold tracking-[0.35em] uppercase text-gold/80">
-                Sacred Collection
-              </span>
-              <Sparkles size={14} className="text-gold" />
-              <span className="h-px w-8 bg-gold/60" />
-            </div>
+        <div className="relative z-10 container mx-auto px-4 max-w-[1240px] py-20 text-center">
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-3 mb-5">
+            <span className="h-px w-7 bg-gold/60" />
+            <span className="text-[10.5px] font-medium tracking-[0.28em] uppercase text-gold">
+              Nepal · Lab Certified · Pre-Energised
+            </span>
+            <span className="h-px w-7 bg-gold/60" />
+          </div>
 
-            {/* Headline */}
-            <h1 className="font-serif text-4xl md:text-6xl font-semibold text-white leading-[1.1] max-w-2xl">
-              Handpicked for
-              <span className="block text-gold mt-1">Spiritual Growth</span>
-            </h1>
+          {/* Headline */}
+          <h1 className="font-serif font-light text-ivory leading-[1.1] tracking-[0.02em] mb-4"
+            style={{ fontSize: 'clamp(2.8rem, 5vw, 4.2rem)' }}
+          >
+            The <em className="not-italic italic text-gold-light font-normal">Sacred</em> Collection
+          </h1>
 
-            {/* Subtitle */}
-            <p className="mt-6 text-base md:text-lg text-white/50 max-w-lg leading-relaxed">
-              Nepal-origin Rudraksha beads and natural crystal bracelets. 
-              Lab certified, ritually energised, shipped worldwide.
-            </p>
+          {/* Description */}
+          <p className="text-[0.88rem] leading-[1.75] max-w-[480px] mx-auto mb-0"
+            style={{ color: 'rgba(249,245,238,0.58)' }}
+          >
+            Each piece in our collection is hand-selected from Nepal&apos;s sacred mountains —
+            authenticated, ritually energised, and delivered to your doorstep with intention.
+          </p>
 
-            {/* CTA */}
-            <Link
-              href="/cart"
-              className="mt-8 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-gold hover:border-gold hover:text-charcoal transition-all duration-300"
-            >
-              <ShoppingBag size={16} />
-              View Cart
-            </Link>
+          {/* Stats */}
+          <div className="flex justify-center gap-10 pt-7 mt-6 border-t border-white/8">
+            {[
+              { num: `${list.length}`, label: 'Products' },
+              { num: '4.9★', label: 'Avg Rating' },
+              { num: '12K+', label: 'Happy Seekers' },
+              { num: '100%', label: 'Authentic' },
+            ].map(s => (
+              <div key={s.label} className="text-center">
+                <span className="font-serif text-[1.75rem] font-semibold text-gold-light block leading-none">
+                  {s.num}
+                </span>
+                <span className="text-[0.65rem] tracking-[0.1em] uppercase mt-1 block"
+                  style={{ color: 'rgba(249,245,238,0.42)' }}
+                >
+                  {s.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#f8f5f0] to-transparent" />
+        {/* Bottom fade to page bg */}
+        <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#f8f5f0] to-transparent" />
       </section>
 
-      {/* ─── Products Grid ─── */}
-      <section className="container mx-auto px-4 max-w-[1240px] py-14">
-        <ShopGrid
-          products={(products as Product[]) ?? []}
-          initialCategory={params.category}
-        />
-      </section>
+      {/* ── Shop Grid with sidebar ── */}
+      <ShopGrid products={list} initialCategory={params.category} />
     </>
   )
 }
