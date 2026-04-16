@@ -33,8 +33,11 @@ export default function Footer() {
             <h5 className="font-semibold text-sm uppercase tracking-wider text-white/80 mb-4">Support</h5>
             <ul className="space-y-2 text-sm text-white/60">
               <li><Link href="/login" className="hover:text-gold transition">Account</Link></li>
-              <li><a href="/shop" className="hover:text-gold transition">Shop</a></li>
+              <li><Link href="/shop" className="hover:text-gold transition">Shop</Link></li>
               <li><Link href="/cart" className="hover:text-gold transition">Cart</Link></li>
+              <li><Link href="/refund-policy" className="hover:text-gold transition">Refund Policy</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-gold transition">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-gold transition">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
 
