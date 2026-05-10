@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sanoosha Premium
 
-## Getting Started
+Premium ecommerce redesign for Sanoosha, focused on authentic Rudraksha, crystal jewellery, store operations, checkout readiness, and an admin surface.
 
-First, run the development server:
+Live: https://sanoosha-premium.vercel.app
+
+## What This Is
+
+Sanoosha Premium is a production-style Next.js storefront with a polished customer-facing store and internal admin area. The project turns a spiritual jewellery brand into a modern ecommerce experience with product browsing, WhatsApp conversion, Supabase-backed infrastructure, and Razorpay integration paths.
+
+## Product Surface
+
+| Area | What it does |
+| --- | --- |
+| Storefront | Homepage, shop grid, product cards, announcement bar, navigation, footer |
+| Commerce | Razorpay integration layer and conversion-ready product flow |
+| Admin | Admin layout, stats cards, and management shell |
+| Auth/data | Supabase client, server, and middleware setup |
+| Brand | Store-specific visual system and brand guide |
+
+## Tech Stack
+
+| Layer | Choice |
+| --- | --- |
+| Framework | Next.js, App Router |
+| Language | TypeScript |
+| Styling | TailwindCSS |
+| Data/auth | Supabase SSR + Supabase JS |
+| Payments | Razorpay |
+| UI/motion | Framer Motion, Lucide React, Recharts |
+| Deployment | Vercel |
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build and checks:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Files
 
-## Learn More
+```text
+app/(store)/page.tsx                Store entry
+components/store/                   Storefront components
+app/admin/page.tsx                  Admin entry
+components/admin/                   Admin UI primitives
+lib/supabase/                       Supabase client/server/middleware
+lib/razorpay.ts                     Razorpay integration
+docs/brand-guide.md                 Brand direction
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Why It Matters
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The repo shows end-to-end ecommerce execution: brand refresh, product browsing, conversion-focused UI, payment plumbing, admin foundation, and deployable Next.js architecture.
